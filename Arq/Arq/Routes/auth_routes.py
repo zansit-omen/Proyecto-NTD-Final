@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, make_response, redirect
+from flask import Blueprint, render_template, request, jsonify, make_response, redirect
 from Services.auth_service import login
 from Cross.jwt_middleware import COOKIE_NAME
 
