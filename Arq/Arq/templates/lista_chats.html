@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Chats</title>
+</head>
+<body>
+    <h1>Chats de Usuario {{ usuario }}</h1>
+    <ul>
+        {% for chat in chats %}
+        <li><a href="/chats/{{ usuario }}/{{ chat.id }}">Chat con {{ chat.nombre_otro_usuario }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Inicio</a>
+</body>
+</html>

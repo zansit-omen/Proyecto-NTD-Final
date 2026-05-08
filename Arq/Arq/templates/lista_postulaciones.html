@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Postulaciones</title>
+</head>
+<body>
+    <h1>Postulaciones para la oferta {{ oferta }}</h1>
+    <ul>
+        {% for postulacion in postulaciones %}
+        <li>ID: {{ postulacion.id }} - Estado: {{ postulacion.estado }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Inicio</a>
+</body>
+</html>

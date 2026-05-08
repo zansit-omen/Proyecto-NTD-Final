@@ -1,3 +1,4 @@
+
 import sqlite3
 def setup_database():
     try:
@@ -65,7 +66,7 @@ def setup_database():
     
     finally:
         if conn:            
-            conn.close()
+            return conn.close()
             
 def seed_data(cursor):
     # Delete existing rows (child tables first)
