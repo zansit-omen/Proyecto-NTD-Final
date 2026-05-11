@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Ofertas</title>
+</head>
+<body>
+    <h1>Ofertas</h1>
+    <ul>
+        {% for oferta in ofertas %}
+        <li><a href="/delegado/{{ autor }}/oferta/{{ oferta.id }}">{{ oferta.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Inicio</a>
+</body>
+</html>

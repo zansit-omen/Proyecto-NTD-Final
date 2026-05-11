@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Chat</title>
+</head>
+<body>
+    <h1>Chat Detalle</h1>
+    <ul>
+        {% for mensaje in chat.mensajes %}
+        <li><b>{{ mensaje.usuario }}:</b> {{ mensaje.texto }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/chats/{{ usuario }}">Volver a los chats</a>
+</body>
+</html>
