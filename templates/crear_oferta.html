@@ -114,8 +114,8 @@
 
                 if (response.ok) {
                     alert('¡Oferta creada exitosamente!');
-                    // Redirigir a la lista de ofertas usando usuarioId
-                    window.location.href = `/delegado/${usuarioId}/oferta`;
+                    // Redirigir a la lista de ofertas
+                    window.location.href = `/delegado/oferta`;
                 } else {
                     const text = await response.text();
                     alert('Error al crear la oferta. Por favor intenta de nuevo.');

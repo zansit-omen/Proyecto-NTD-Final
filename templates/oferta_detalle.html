@@ -87,6 +87,13 @@
                         <p style="margin: 8px 0; padding: 10px; background: white; border-radius: 4px; border-left: 3px solid var(--primary-blue); white-space: pre-wrap;">{{ oferta.descripcionOferta }}</p>
                     </div>
                 </div>
+                
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="button" onclick="postularOferta()" class="btn-login" style="border: none; background: #4CAF50; color: white; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold;">
+                        ✓ Postular para esta Oferta
+                    </button>
+                    <button type="button" onclick="window.history.back()" class="btn-detalle" style="padding: 10px 20px;">Volver Atrás</button>
+                </div>
                 {% endif %}
             </div>
         </div>
@@ -97,16 +104,15 @@
         async function postularOferta() {
             if (confirm('¿Deseas postularte para esta oferta?')) {
                 const urlParts = window.location.pathname.split('/');
-                const candidatoId = urlParts[2]; // /candidato/<id>/ofertas/<oferta_id>
-                const ofertaId = urlParts[4];
+                const ofertaId = urlParts[4]; // /candidato/<id>/ofertas/<oferta_id>
                 
-                const response = await fetch(`/candidato/${candidatoId}/ofertas/${ofertaId}/postular`, {
+                const response = await fetch(`/candidato/ofertas/${ofertaId}/postular`, {
                     method: 'POST'
                 });
                 
                 if (response.ok) {
                     alert('¡Postulación enviada exitosamente!');
-                    window.location.href = `/candidato/${candidatoId}/ofertas`;
+                    window.location.href = `/candidato/${urlParts[2]}/ofertas`;
                 } else {
                     const text = await response.text();
                     alert('Error al postular: ' + text);

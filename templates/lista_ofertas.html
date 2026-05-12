@@ -21,7 +21,7 @@
         <div class="section-title" style="justify-content: space-between;">
             <h2>Tablero de Ofertas</h2>
             {% if tipoUsuario == "delegado" %}
-            <button onclick="window.location.href='/delegado/{{ autor }}/oferta/crear'" class="btn-login" style="border: none; background: var(--primary-blue); color: white;">
+            <button onclick="window.location.href='/delegado/oferta/crear'" class="btn-login" style="border: none; background: var(--primary-blue); color: white;">
                 + Nueva Oferta
             </button>
             {% endif %}
@@ -41,7 +41,7 @@
                     <p class="oferta-desc">{{ oferta.descripcionOferta }}</p>
                     <div class="oferta-footer" style="display: flex; justify-content: space-between; align-items: center;">
                         {% if tipoUsuario == "candidato" %}
-                            <a href="/candidato/{{ autor }}/ofertas/{{ oferta.ofertaId }}" class="btn-detalle">
+                            <a href="/candidato/ofertas/{{ oferta.ofertaId }}" class="btn-detalle">
                                 Ver Detalles
                             </a>
                         {% else %}
